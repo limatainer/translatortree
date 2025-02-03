@@ -27,14 +27,17 @@ function AgentChat({
 
       setIsAnalyzing(true);
       try {
-        const response = await fetch('http://localhost:3001/api/analyze', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept-Language': language,
-          },
-          body: JSON.stringify({ text }),
-        });
+        const response = await fetch(
+          'https://translatortree.onrender.com/api/analyze',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept-Language': language,
+            },
+            body: JSON.stringify({ text }),
+          }
+        );
         const data = await response.json();
 
         setSuggestions(data.suggestions || []);
