@@ -36,13 +36,16 @@ const config = {
     region: process.env.AZURE_TRANSLATOR_REGION,
   },
 };
-
+const clientUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:5173'
+    : process.env.CLIENT_URL;
 // Initialize Express app with security middleware
 const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: config.clientUrl,
+    origin: clientUrl,
     methods: ['GET', 'POST'],
     credentials: true,
   })

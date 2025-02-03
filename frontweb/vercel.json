@@ -9,6 +9,6 @@
     }
   ],
   "env": {
-    "VITE_SOCKET_SERVER_URL": "https://translator-n1tr.onrender.com"
+    "VITE_SOCKET_SERVER_URL": "https://translatortree.onrender.com"
   }
 }

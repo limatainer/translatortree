@@ -28,7 +28,7 @@ function AgentChat({
       setIsAnalyzing(true);
       try {
         const response = await fetch(
-          'https://translatortree.onrender.com/api/analyze',
+          `${import.meta.env.VITE_SOCKET_SERVER_URL}/api/analyze`,
           {
             method: 'POST',
             headers: {
